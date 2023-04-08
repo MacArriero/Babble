@@ -1,7 +1,7 @@
 import './App.css'
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 
@@ -16,9 +16,9 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="/Babble/">
+        <Route path="/">
           <Route
             index
             element={
@@ -27,10 +27,10 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
